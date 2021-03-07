@@ -375,7 +375,7 @@ function GenerateMenu() -- this is a big ass function
 			thisPlayer:AddItem(thisItem)
 			thisItem.Activated = function(ParentMenu,SelectedItem)
 				local coords = GetEntityCoords(PlayerPedId(),true)
-				TriggerServerEvent("EasyAdmin:TeleportPlayerToCoords", thePlayer.id, coords)
+				TriggerServerEvent("EasyAdmin:TeleportPlayerToCoords", thePlayer.id, coords.x, coords.y, coords.z)
 			end
 		end
 		
@@ -465,7 +465,7 @@ function GenerateMenu() -- this is a big ass function
 		thisPlayer:AddItem(thisItem)
 		thisItem.Activated = function(ParentMenu,SelectedItem)
 			local pCoords = GetEntityCoords(PlayerPedId(),true)
-			TriggerServerEvent("EasyAdmin:TeleportPlayerToCoords", -1, pCoords)
+			TriggerServerEvent("EasyAdmin:TeleportPlayerToCoords", -1, pCoords.x, pCoords.y, pCoords.z)
 		end
 	end
 

@@ -101,15 +101,15 @@ AddEventHandler('EasyAdmin:requestSpectate', function(playerServerId, tgtCoords)
 	spectatePlayer(GetPlayerPed(playerId),playerId,GetPlayerName(playerId))
 end)
 
-AddEventHandler('EasyAdmin:TeleportRequest', function(id, tgtCoords)
+AddEventHandler('EasyAdmin:TeleportRequest', function(id, x,y,z)
 	if id then
-		if (tgtCoords.x == 0.0 and tgtCoords.y == 0.0 and tgtCoords.z == 0.0) then
+		if (x == 0.0 and y == 0.0 and z == 0.0) then
 			local tgtPed = GetPlayerPed(GetPlayerFromServerId(id))
-			tgtCoords = GetEntityCoords(tgtPed)
+			x,y,z = table.unpack(GetEntityCoords(tgtPed))
 		end
-		SetEntityCoords(PlayerPedId(), tgtCoords.x, tgtCoords.y, tgtCoords.z,0,0,0, false)
+		SetEntityCoords(PlayerPedId(), x, y, z,0,0,0, false)
 	else
-		SetEntityCoords(PlayerPedId(), tgtCoords.x, tgtCoords.y, tgtCoords.z,0,0,0, false)
+		SetEntityCoords(PlayerPedId(), x,y,z,0,0,0, false)
 	end
 end)
 
