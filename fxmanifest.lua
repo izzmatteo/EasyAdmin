@@ -10,7 +10,7 @@ server_scripts {
 }
 
 client_scripts {
-	"dependencies/NativeUI.lua",
+    "dependencies/NativeUILua_Reloaded/src/NativeUIReloaded.lua",
 	"dependencies/NativeUI-rdr3.lua",
 	"dependencies/Controls.lua",
 	"util_shared.lua",
