@@ -662,14 +662,14 @@ function GenerateMenu() -- this is a big ass function
 
 				
 				local thisItem = NativeUI.CreateItem(GetLocalisedText("reason"),banlist[foundBanid].reason)
-				mainMenu.SubMenu:AddItem(thisItem)
+				mainMenu:AddItem(thisItem)
 				thisItem.Activated = function(ParentMenu,SelectedItem)
 					--nothing
 				end	
 
 				if banlist[foundBanid].name then
 					local thisItem = NativeUI.CreateItem("Name: "..banlist[foundBanid].name)
-					mainMenu.SubMenu:AddItem(thisItem)
+					mainMenu:AddItem(thisItem)
 					thisItem.Activated = function(ParentMenu,SelectedItem)
 						--nothing
 					end	
@@ -677,14 +677,14 @@ function GenerateMenu() -- this is a big ass function
 				
 				for _, identifier in pairs(banlist[foundBanid].identifiers) do
 					local thisItem = NativeUI.CreateItem(string.format(GetLocalisedText("identifier"), string.split(identifier, ":")[1]),identifier)
-					mainMenu.SubMenu:AddItem(thisItem)
+					mainMenu:AddItem(thisItem)
 					thisItem.Activated = function(ParentMenu,SelectedItem)
 						--nothing
 					end	
 				end
 
 				local thisItem = NativeUI.CreateItem(GetLocalisedText("unbanplayer"), GetLocalisedText("unbanplayerguide"))
-				mainMenu.SubMenu:AddItem(thisItem)
+				mainMenu:AddItem(thisItem)
 				thisItem.Activated = function(ParentMenu,SelectedItem)
 					TriggerServerEvent("EasyAdmin:unbanPlayer", banlist[foundBanid].banid)
 					TriggerServerEvent("EasyAdmin:requestBanlist")
