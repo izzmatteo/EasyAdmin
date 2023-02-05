@@ -40,7 +40,7 @@ end
 playlist = nil
 
 
-RegisterCommand('easyadmin', function(source, args)
+RegisterCommand('easyadmin312', function(source, args)
 	CreateThread(function()
 		if not isAdmin == true then
 			TriggerServerEvent("EasyAdmin:amiadmin")
