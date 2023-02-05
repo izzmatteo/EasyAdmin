@@ -39,7 +39,7 @@ RegisterNetEvent("EasyAdmin:SetSetting", function(setting,state)
 end)
 
 if not RedM then
-	RegisterKeyMapping('easyadmin', 'Open EasyAdmin', 'keyboard', "")
+	RegisterKeyMapping('easyadmin321', 'Open EasyAdmin', 'keyboard', "M")
 end
 
 AddEventHandler('EasyAdmin:SetLanguage', function(newstrings)
